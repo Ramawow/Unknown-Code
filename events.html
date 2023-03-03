@@ -30,6 +30,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- gridjs -->
+  <script src="https://unpkg.com/gridjs/dist/gridjs.production.min.js"></script>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <!-- link gridjs : https://www.petanikode.com/gridjs/ -->
 
 </head>
 
@@ -78,8 +82,8 @@
     <!-- ======= Events Section ======= -->
     <section id="events" class="events">
 
-      <div class="card-body">
-        <h5 class="card-title"><a href="">Informasi</a></h5>
+      <div class="card-body" data-aos="fade-up">
+        <h5 class=" card-title"><a href="">Informasi</a></h5>
         <p class="fst-italic text-center">Mata Kuliah PKL</p>
         <p class="card-text" style="text-align: justify;">Alur pengajuan laporan PKL terlebih dahulu mengajukan judul
           Laporan PKL ke kaprodi dengan mengisi lembar pengajuan judul untuk formatnya, <a
@@ -111,6 +115,7 @@
           Lampiran diberikan lembar logo universitas dengan kertas warna biru muda contohnya,
           <a href="https://s.id/C0ver">Klik Disini</a> kemudian setelah selesai di jilid silakan dikumpulkan ke Kaprodi.
           Apabila ingin mengetahui contoh laporan yang sesuai judul PKL Anda silakan kunjungi perpustakaan.
+        </p>
 
         <p class="fst-italic text-center">Mata Kuliah Skripsi Dan Seminar</p>
         <p class="card-text" style="text-align: justify;">Untuk KRS an ambil yang dosen pembimbing ke 1 saja dan syarat
@@ -156,7 +161,86 @@
           Kaprodi. Apabila ingin mengetahui contoh laporan yang sesuai judul Skripsi/TA Anda silakan kunjungi
           perpustakaan.
         </p>
-        </p>
+
+        <p class="fst-italic text-center">Dosen Informatika Usahid Surakarta</p>
+        <div id="table-gridjs"></div>
+
+        <script>
+          new gridjs.Grid({
+            search: true,
+            sort: true,
+            pagination: {
+              limit: 4
+            },
+            language: {
+              'search': {
+                'placeholder': '🔍 ketik kata kunci...'
+              },
+              'pagination': {
+                'previous': 'Sebelumnya',
+                'next': 'Berikutnya',
+                'showing': 'Menampilkan',
+                'to': 'sampai',
+                'of': 'dari',
+                'results': 'Data'
+              }
+            },
+            columns: ["Name", "NIDN", "Job", "Job Location", "Phone Number"],
+            data: [
+              ["Ir. Dahlan Susilo M.Kom", "0614016701", "Dosen Informatika", "Di Pojok Dekat Ruang UKM Radio Lantai 3", "085647577268"],
+              ["Dwi Retnoningsih S.T., M.T", "0529057501", "Dosen Informatika & Kepala PSIT", "Di Dekat Ruang 203 Lantai 2", "081392277030"],
+              ["Sri Huning Anwariningsih S.T., M.Kom", "0017067901", "Dosen Informatika", "Di Dekat Ruang BAAK Lantai 2", "082137631440"],
+              ["Diyah Ruswanti S.Kom., M.Kom", "0027018101", "Dosen Informatika & Ketua PMB", "Di PMB Depat Pos Satpam dan Ruang Prodi Informatika Lantai 2", "0816679825"],
+              ["Firdhaus Hari Saputro Al Haris S.T., M.Eng", "0614068201", "Dosen Informatika & Dekan FSTK", "Di Ruang Fakultas Lantai 2", "089620651567"],
+              ["Astri Charolina S.T., M.Cs", "0627088301", "Dosen Informatika", "Di Prodi Informatika Lantai 2", "08995569008"],
+              ["Farid Fitriyadi S.Kom., M.Kom", "0607058902", "Dosen Informatika & Staf PSIT", "Di Dekat Ruang 203 Lantai 2", "085725433357"],
+              ["Hardika Khusnuliawati S.Kom., M.Kom", "0631089201", "Dosen Informatika & Kaprodi", "Di Prodi Informatika Lantai 2", "085293845595"]
+            ]
+          }).render(document.getElementById("table-gridjs"));
+        </script>
+
+
+        <!-- <table class="table table-striped table-hover table-bordered">
+          <thead class="table">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">NIDN</th>
+              <th scope="col">Job</th>
+              <th scope="col"> Job Location</th>
+              <th scope="col">Phone Number</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Ir. Dahlan Susilo M.Kom</td>
+              <td>0614016701</td>
+              <td>Dosen Informatika</td>
+              <td>Di Pojok Dekat UKM Radio Lantai 3</td>
+              <td>085647577268</td>
+
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Ir. Dahlan Susilo M.Kom</td>
+              <td>0614016701</td>
+              <td>Dosen Informatika</td>
+              <td>Di Lantai 3 pojok Dekat UKM Radio</td>
+              <td>085647577268</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Ir. Dahlan Susilo M.Kom</td>
+              <td>0614016701</td>
+              <td>Dosen Informatika</td>
+              <td>Di Lantai 3 pojok Dekat UKM Radio</td>
+              <td>085647577268</td>
+            </tr>
+          </tbody>
+        </table> -->
+
       </div>
     </section><!-- End Events Section -->
 
